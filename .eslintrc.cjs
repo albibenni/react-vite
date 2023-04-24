@@ -2,17 +2,23 @@ module.exports = {
     env: {browser: true, es2021: true},
     parser: '@typescript-eslint/parser',
     extends: [
-        'eslint:recommended',
         'airbnb',
         'airbnb/hooks',
-        'plugin:import/recommended',
-        'plugin:import/typescript',
+        'airbnb-typescript',
+        'eslint:recommended',
+        // 'plugin:import/recommended',
+        // 'plugin:import/typescript',
         'prettier',
         'plugin:prettier/recommended'
     ],
-    parserOptions: {ecmaVersion: 'latest', sourceType: 'module', ecmaFeatures: {
+    parserOptions: {
+        project: './tsconfig.json',
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
             jsx: true, // Allows for the parsing of JSX
-        },},
+        },
+    },
     rules: {
         "indent": "error",
         "prettier/prettier": "error",
