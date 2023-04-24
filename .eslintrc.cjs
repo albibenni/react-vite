@@ -1,18 +1,24 @@
 module.exports = {
     env: {browser: true, es2021: true},
     parser: '@typescript-eslint/parser',
+    plugins: [
+        'import',
+        // 'import-typescript',
+        // 'eslint',
+        'prettier',
+    ],
     extends: [
         'airbnb',
-        'airbnb/hooks',
         'airbnb-typescript',
-        'eslint:recommended',
+        'airbnb/hooks',
         // 'plugin:import/recommended',
         // 'plugin:import/typescript',
         'prettier',
-        'plugin:prettier/recommended'
     ],
     parserOptions: {
-        project: './tsconfig.json',
+        project: [
+          './tsconfig.node.json',
+            './tsconfig.json'],
         ecmaVersion: 'latest',
         sourceType: 'module',
         ecmaFeatures: {
@@ -23,21 +29,10 @@ module.exports = {
         "indent": "error",
         "prettier/prettier": "error",
         'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
-        'react/jsx-no-bind': [0, { allowFunctions: true }],
-        'react/react-in-jsx-scope': 'off',
-        'import/extensions': [
-            'error',
-            'ignorePackages',
-            {
-                js: 'never',
-                jsx: 'never',
-                ts: 'never',
-                tsx: 'never',
-            },
-        ],
-        'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+        // 'react/jsx-no-bind': [0, { allowFunctions: true }],
+        // 'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/no-unused-vars': 'error',
-        'no-use-before-define': 'off',
+        // 'no-use-before-define': 'off',
     },
     settings: {
         "import/resolver": {
