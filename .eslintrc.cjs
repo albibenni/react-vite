@@ -30,7 +30,7 @@ module.exports = {
         "prettier/prettier": "error",
         'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
         // 'react/jsx-no-bind': [0, { allowFunctions: true }],
-        // 'react/react-in-jsx-scope': 'off',
+        "react/react-in-jsx-scope": "off", //react is not needed to be imported
         '@typescript-eslint/no-unused-vars': 'error',
         // 'no-use-before-define': 'off',
     },
