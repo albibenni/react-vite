@@ -11,8 +11,9 @@ module.exports = {
         'airbnb',
         'airbnb-typescript',
         'airbnb/hooks',
-        // 'plugin:import/recommended',
+        'plugin:import/recommended',
         // 'plugin:import/typescript',
+        'plugin:import/warnings',
         'prettier',
     ],
     parserOptions: {
@@ -32,6 +33,8 @@ module.exports = {
         // 'react/jsx-no-bind': [0, { allowFunctions: true }],
         "react/react-in-jsx-scope": "off", //react is not needed to be imported
         '@typescript-eslint/no-unused-vars': 'error',
+        'import/no-extraneous-dependencies': ['error', { devDependencies: true, optionalDependencies: true }],
+        'import/no-unresolved': 'off',
         // 'no-use-before-define': 'off',
     },
     settings: {
