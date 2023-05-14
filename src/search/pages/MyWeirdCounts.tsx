@@ -7,7 +7,7 @@ export default function MyWeirdCounts(): JSX.Element {
     obj1.x += 1;
     obj2.y += 1;
     console.log(obj1.x, obj1.y);
-    console.log(obj2.x, obj2.y);
+    console.log(obj2.x, obj2.y); // prints the same thing since obj1 and obj2 are the same object
   };
   return (
     <div className="doMath">
