@@ -5,7 +5,6 @@ import './Home.css';
 
 export default function () {
   const [count, setCount] = useState(0);
-
   const counting = () => {
     setCount(count + 1);
   };
