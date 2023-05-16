@@ -11,9 +11,12 @@ function Search() {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { value } = inputRef.current;
-    if (value) return;
-    setItems((prevState) => [...prevState, value]);
+    const inputElement = inputRef.current;
+    if (inputElement) {
+      if (!inputElement.value) return;
+      setItems((prevState) => [...prevState, inputElement.value]);
+      inputRef.current.value = '';
+    }
   };
 
   return (
