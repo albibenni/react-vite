@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 
 function Search() {
   const [items, setItems] = useState<string[]>([]);
+  const [query, setQuery] = useState<string>('');
   const inputRef = useRef<HTMLInputElement>(null);
 
   const prefilled = () => {
@@ -19,8 +20,19 @@ function Search() {
     }
   };
 
+  const filterItems = items.filter((item) =>
+    item.toLowerCase().includes(query.toLowerCase())
+  );
+
   return (
     <div className="app">
+      Search:{' '}
+      <input
+        value={query}
+        onChange={(event) => setQuery(event.target.value)}
+        ref={inputRef}
+        type="text"
+      />
       <form onSubmit={onSubmit}>
         New Item: <input ref={inputRef} type="text" />
         <button type="submit">Add </button>
@@ -31,7 +43,7 @@ function Search() {
         Prefilled{' '}
       </button>
       <ul className="List">
-        {items.map((item) => (
+        {filterItems.map((item) => (
           <li className="listItem">{item}</li>
         ))}
       </ul>
