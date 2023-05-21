@@ -27,7 +27,6 @@ module.exports = {
         },
     },
     rules: {
-        "indent": "error",
         "prettier/prettier": "error",
         'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
         // 'react/jsx-no-bind': [0, { allowFunctions: true }],
